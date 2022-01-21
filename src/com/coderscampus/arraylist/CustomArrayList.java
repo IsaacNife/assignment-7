@@ -14,20 +14,15 @@ public class CustomArrayList<T> implements CustomList<T> {
             ensureCapacity();
         }
 		items[arraySize++] = item;
-		
 		return true;
 	}
 	
 	private void ensureCapacity() {
-        int newSize =items.length * 2;
-        items = Arrays.copyOf(items, newSize);
+        items = Arrays.copyOf(items, items.length * 2);
     }
 		
-	
-
 	@Override
 	public int getSize() {
-		
 		return arraySize;
 	}
 
@@ -38,9 +33,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		if(index >= arraySize)
 			throw new IndexOutOfBoundsException(index);
 		return (T) items[index];
-		
-		
-	}
+		}
 	
 	@Override
 	public boolean add(int index, T item) {
@@ -50,7 +43,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		if(arraySize == items.length) {
 			 ensureCapacity();
 		}
-		for(int i = arraySize - 1; i > index; i--) {
+		for(int i = arraySize + 1; i >= index; i--) {
 			items[i+1] = items[i];
 		}
 		items[index] = item;
