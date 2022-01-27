@@ -53,9 +53,9 @@ public class CustomArrayList<T> implements CustomList<T> {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public T remove(int index) {
+	public T remove(int index) throws IndexOutOfBoundsException {
 		if(index >= arraySize) {
-			throw new ArrayIndexOutOfBoundsException(index);
+			throw new IndexOutOfBoundsException(index);
 		}
 		T removedItem = (T) items[index];
 		

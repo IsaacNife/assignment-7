@@ -38,7 +38,7 @@ CustomList<Object> myCustomList = new CustomArrayList<>();
 		myCustomList.add(3, "verde");
 		
 		
-		System.out.println(myCustomList.add(3, "verde"));
+//		System.out.println(myCustomList.add(3, "verde"));
 		System.out.println(myCustomList.getSize());
 		System.out.println(myCustomList.remove(3));
 		System.out.println(myCustomList.getSize());
